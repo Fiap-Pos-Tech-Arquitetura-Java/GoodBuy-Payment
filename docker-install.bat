@@ -1,0 +1,2 @@
+docker pull postgres:latest
+docker run --name goodbuy-standalone-payment-db -p 5435:5435 -e PGPORT=5435 -e POSTGRES_USER=goodBuy -e POSTGRES_PASSWORD=goodBuyPayment -e POSTGRES_DB=goodbuy-payment-db -d postgres

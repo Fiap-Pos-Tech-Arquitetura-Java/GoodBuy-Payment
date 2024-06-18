@@ -1,0 +1,32 @@
+services:
+  goodbuy-payment:
+    image: 'goodbuy-payment-docker-image'
+    build:
+      context: .
+    container_name: 'goodbuy-payment-docker-container'
+    depends_on:
+      - db
+    ports:
+      - "8083:8083"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5435/goodbuy-payment-db
+      - SPRING_DATASOURCE_USERNAME=goodBuy
+      - SPRING_DATASOURCE_PASSWORD=goodBuyPayment
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=create-drop
+    networks:
+      - goodbuy-network
+  db:
+    image: postgres:latest
+    container_name: goodbuy-payment-db
+    command: -p 5435
+    ports:
+      - "5435:5435"
+    environment:
+      - POSTGRES_USER=goodBuy
+      - POSTGRES_PASSWORD=goodBuyPayment
+      - POSTGRES_DB=goodbuy-payment-db
+    networks:
+      - goodbuy-network
+networks:
+  goodbuy-network:
+    external: true
