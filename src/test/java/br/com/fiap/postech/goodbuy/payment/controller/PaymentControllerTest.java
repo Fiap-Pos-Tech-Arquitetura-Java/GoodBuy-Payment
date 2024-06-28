@@ -2,8 +2,8 @@ package br.com.fiap.postech.goodbuy.payment.controller;
 
 import br.com.fiap.postech.goodbuy.payment.entity.Payment;
 import br.com.fiap.postech.goodbuy.payment.helper.PaymentHelper;
-import br.com.fiap.postech.goodbuy.payment.security.SecurityHelper;
 import br.com.fiap.postech.goodbuy.payment.service.PaymentService;
+import br.com.fiap.postech.goodbuy.security.SecurityHelper;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,8 +13,6 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-
-import java.util.UUID;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
