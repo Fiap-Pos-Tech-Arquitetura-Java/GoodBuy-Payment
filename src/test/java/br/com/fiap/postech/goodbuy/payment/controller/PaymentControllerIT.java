@@ -46,7 +46,7 @@ public class PaymentControllerIT {
 
     @Test
     void devePermitirObterSumario() {
-        var user = UserHelper.getUser(true, "anderson.wagner", UserRole.USER);
+        var user = UserHelper.getUser("anderson.wagner", UserRole.USER);
         var userDetails = UserHelper.getUserDetails(user);
         var summary = PaymentHelper.getSummary();
         when(userDetailsService.loadUserByUsername(anyString())).thenReturn(userDetails);
