@@ -37,7 +37,7 @@ public class PaymentController {
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @PreAuthorize("!hasRole('ADMIN')")
     @Operation(summary = "realiza o pagamento dos itens associados a um carrinho de compras.")
-    public Payment removeItem(@Valid @RequestBody Payment payment) {
+    public Payment accomplish(@Valid @RequestBody Payment payment) {
         return paymentService.accomplish(securityHelper.getToken(), payment);
     }
 }
