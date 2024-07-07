@@ -8,7 +8,7 @@ import org.springframework.web.client.RestClient;
 @Service
 public class ShopCartIntegration {
 
-    @Value("${REMOTE_BASE_URI:http://localhost:8082/goodbuy/shop-cart}")
+    @Value("${goodbuy.shop-cart.url}")
     String baseURI;
 
     public Summary getSummary(String token) {
