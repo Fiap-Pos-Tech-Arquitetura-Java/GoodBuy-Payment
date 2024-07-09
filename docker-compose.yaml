@@ -1,9 +1,9 @@
 services:
   goodbuy-payment:
-    image: 'goodbuy-payment-docker-image'
+    image: 'goodbuy-payment-image'
     build:
       context: .
-    container_name: 'goodbuy-payment-docker-container'
+    container_name: 'goodbuy-payment-container'
     depends_on:
       - db
     ports:
