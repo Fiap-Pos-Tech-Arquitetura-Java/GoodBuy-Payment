@@ -9,6 +9,7 @@ services:
     ports:
       - "8083:8083"
     environment:
+      - SPRING_PROFILES_ACTIVE=development
       - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5435/goodbuy-payment-db
       - SPRING_DATASOURCE_USERNAME=goodBuy
       - SPRING_DATASOURCE_PASSWORD=goodBuyPayment
